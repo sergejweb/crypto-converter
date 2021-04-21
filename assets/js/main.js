@@ -12,6 +12,8 @@
     const img_src                = 'https://s2.coinmarketcap.com/static/img/coins/64x64/';
 
     let saveDelay;
+    let updateDelay;
+
     let currencyPair = {
         currency: [1, 'BTC'],
         convert: [2781, 'USD'],
@@ -60,6 +62,8 @@
     function pcGetRate(currency, convert) {
         form.addClass('loading');
 
+        clearTimeout(updateDelay);
+
         const formData = {
             action: 'pc_get_price',
             amount: 1,
@@ -77,6 +81,11 @@
                 form.removeClass('loading').addClass('error');
             }
         });
+
+        updateDelay = setTimeout(function() {
+            pcGetRate(currencyPair.currency[0], currencyPair.convert[0]);
+            updateInputs('left');
+        }, 300000);
     }
 
     function updateInputs(direction = 'left') {
@@ -210,4 +219,3 @@
     });
 
 })(jQuery);
-
