@@ -1,0 +1,218 @@
+#pc-crypto-form {
+    font-family: Arial, Helvetica, sans-serif;
+    grid-template-columns: repeat(12, 1fr);
+    font-size: var(--pc-text-size, 16px);
+    color: var(--pc-text-color, #0c0c0c);
+    grid-template-rows: auto auto;
+    display: grid;
+    position: relative;
+}
+
+#pc-crypto-form.error:after {
+    content: 'Something went wrong! Please try again later..';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: brown;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+}
+
+#pc-crypto-form input {
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-right: none;
+    line-height: 2;
+    padding: 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.pc-select-currency-btn {
+    width: 100px;
+    background: #5f9ea050;
+    border: solid 1px cadetblue;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pc-select-currency-btn img {
+    width: 38px;
+}
+
+
+.pc-currency {
+    grid-area: 2 / 1 / span 1 / span 5;
+    display: flex;
+    position: relative;
+}
+
+.pc-convert {
+    grid-area: 2 / 8 / span 1 / span 5;
+    display: flex;
+    position: relative;
+}
+
+#pc-revert-btn {
+    grid-area: 2 / 6 / span 1 / span 2;
+    background: lightgray;
+    justify-self: center;
+    align-self: center;
+    padding: 10px 13px;
+    border-radius: 4px;
+    line-height: 1;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.compact-view #pc-crypto-form {
+    grid-row-gap: 20px;
+}
+
+.compact-view .pc-currency {
+    grid-area: 1 / 1 / span 1 / span 12;
+}
+.compact-view #pc-revert-btn svg {
+    transform: rotate(90deg);
+}
+
+.compact-view .pc-convert {
+    grid-area: 3 / 1 / span 1 / span 12;
+}
+
+.loading #pc-revert-btn {
+    border-radius: 50%;
+    pointer-events: none;
+    animation: pc-rotate .5s linear infinite;
+}
+
+@keyframes pc-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(380deg);
+    }
+}
+
+.pc-dropdown-wrapper {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    height: 0;
+}
+
+.pc-currency-type {
+    display: none;
+}
+
+.select2-container--default,
+.select2-selection--single {
+    height: 0;
+    width: 100% !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered:focus,
+.select2-container--default .select2-selection--single .select2-selection__rendered:active {
+    outline: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px;
+}
+
+.select2-container--default .select2-selection--single {
+    display: none;
+}
+
+.select2-container--open .select2-dropdown--above {
+    margin-top: -68px;
+}
+.select2-container--open .select2-dropdown--below {
+    margin-top: -9px;
+}
+
+.select2-results__option--selectable {
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field,
+.select2-search--dropdown {
+    line-height: 1.2;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field:focus,
+.select2-search--dropdown:focus {
+    outline: none;
+}
+
+.select2-container .selection {
+    display: inline-block;
+    width: 100%;
+}
+
+#pc-history-table {
+    margin-top: 30px;
+}
+
+.pc-history {
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.pc-history h5 {
+    font-size: 21px;
+    margin: 10px 0 30px;
+    text-align: center;
+}
+
+.pc-history ul {
+    list-style-type: none;
+    margin: 0 0 20px 0;
+    font-size: 16px;
+}
+
+.pc-history ul li {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+.pc-history ul li span {
+    color: #0968b6;
+    font-weight: 600;
+}
+
+.pc-list-divider {
+    flex-grow: 1;
+    border-bottom: 1px dotted #868686;
+    height: 19px;
+    margin: 0 10px;
+}
+
+.pc-history-time-passed {
+    font-size: 12px;
+    color: #666;
+}
