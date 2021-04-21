@@ -8,7 +8,7 @@ class PC_Crypto_Currency_Widget extends WP_Widget {
         $widget_ops = array(
             'description' => 'Displays crypto currency exchange form',
         );
-        parent::__construct( 'pc_crypto_currency', 'Crypto Currency Exchange', $widget_ops );
+        parent::__construct( 'pc_crypto_currency', 'Crypto Currency Convertor', $widget_ops );
     }
 
     /**
